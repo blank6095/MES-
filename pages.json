@@ -12,10 +12,12 @@
 				"navigationBarTitleText": "我的"
 			}
 		},
+		
 		{
-			"path": "pages/dome/dome1/dome1",
+			"path": "pages/dome/watch/watch",
 			"style": {
-				"navigationBarTitleText": "2026-1-10"
+				"navigationBarTitleText": "监听器"
+
 			}
 		}
 	],
@@ -29,8 +31,7 @@
 	"tabBar": {
 		// "backgroundColor": "#2C405A",
 		"selectedColor": "#333",
-		"list": [
-			{
+		"list": [{
 				"iconPath": "/static/tabbar/首页 (1).png",
 				"selectedIconPath": "/static/tabbar/首页.png",
 				"pagePath": "pages/index/index",

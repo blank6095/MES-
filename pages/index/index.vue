@@ -40,10 +40,9 @@
 		'https://uview-plus.jiangruyi.com/album/9.jpg',
 		'https://uview-plus.jiangruyi.com/album/10.jpg',
 	];
-	const fileList = ref([{
-		name: "dome1",
-		url: urls[uni.$u.random(0, urls.length - 1)]
-	}]);
+	const fileList = ref([
+		{name: "watch",url: urls[uni.$u.random(0, urls.length - 1)]},
+		]);
 	onLoad(() => {
 
 	});
@@ -63,7 +62,7 @@
 	}
 	const sendToDome = (file) => {
 		uni.navigateTo({
-			url: `/pages/dome/dome1/${file}`
+			url: `/pages/dome/${file}/${file}`
 		})
 	}
 </script>
