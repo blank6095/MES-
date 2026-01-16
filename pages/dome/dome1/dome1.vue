@@ -1,6 +1,6 @@
 <template>
 	<view>
-		
+			<dome :name="value"></dome>
 	</view>
 </template>
 
