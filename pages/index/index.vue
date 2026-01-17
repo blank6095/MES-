@@ -40,31 +40,28 @@
 		'https://uview-plus.jiangruyi.com/album/9.jpg',
 		'https://uview-plus.jiangruyi.com/album/10.jpg',
 	];
-	const fileList = ref([{
-		name: "watch",
-		url: urls[uni.$u.random(0, urls.length - 1)]
-	}]);
+	const fileList = ref([
+		{name: "watch",url: urls[uni.$u.random(0, urls.length - 1)]},
+		{name: "dome1",url: urls[uni.$u.random(0, urls.length - 1)]},
+		]);
 	onLoad(() => {
 
 	});
-
-	const scrolltolower = () => {
-		loadmore();
-	};
-
 	const loadmore = () => {
+		
+	};
+	const addFile = () => {
 		fileList.value.push({
 			name: file.value,
 			url: urls[uni.$u.random(0, urls.length - 1)],
 		});
-	};
-	const addFile = () => {
-		loadmore()
+		file.value="";
 	}
-	const sendToDome = (file) => {
+	const sendToDome = (name) => {
 		uni.navigateTo({
-			url: `/pages/dome/${file}/${file}`
+			url: `/pages/dome/${name}/${name}`
 		})
+		
 	}
 </script>
 <style>

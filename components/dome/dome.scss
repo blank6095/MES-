@@ -1,0 +1,77 @@
+// 文件名：dome.scss
+// 定义设计变量，方便统一修改
+$primary-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$card-bg: #ffffff;
+$border-radius-lg: 20rpx;
+$border-radius-xl: 30rpx;
+$spacing-md: 30rpx;
+$spacing-lg: 40rpx;
+$box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.1);
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f5f7fa, #e4edf5);
+  padding: $spacing-md;
+  box-sizing: border-box;
+}
+
+// 头部样式：渐变背景 + 圆角
+.head {
+  width: 100%;
+  padding: $spacing-lg;
+  background: $primary-color;
+  color: white;
+  text-align: center;
+  border-radius: $border-radius-xl;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: $spacing-lg;
+  box-shadow: $box-shadow;
+}
+
+// 内容卡片通用样式
+.content-card {
+  background: $card-bg;
+  border-radius: $border-radius-lg;
+  padding: $spacing-md;
+  margin-bottom: $spacing-lg;
+  box-shadow: $box-shadow;
+  border-top: 4rpx solid #667eea; // 增加一点强调色
+  
+  p {
+    color: #333;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+    font-weight: 500;
+  }
+  
+  // 插槽内容的默认样式
+  .slot-content {
+    font-size: 24rpx;
+    color: #666;
+    background-color: #f9f9f9;
+    padding: 10rpx;
+    border-radius: 10rpx;
+  }
+}
+
+// 特定内容样式
+.content1 {
+  @extend .content-card;
+}
+
+.content2 {
+  @extend .content-card;
+  border-top-color: #764ba2; // 不同的颜色区分
+}
+
+// 底部样式
+.root {
+  text-align: center;
+  padding: $spacing-md;
+  color: #999;
+  font-size: 24rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: $border-radius-lg;
+  backdrop-filter: blur(10px); // 毛玻璃效果（如果环境支持）
+}
