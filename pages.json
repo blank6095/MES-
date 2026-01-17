@@ -17,6 +17,12 @@
 			"style": {
 				"navigationBarTitleText": "监听器"
 			}
+		},
+		{
+			"path": "pages/dome/component/component",
+			"style": {
+				"navigationBarTitleText": "组件"
+			}
 		}
 	],
 	"globalStyle": {
