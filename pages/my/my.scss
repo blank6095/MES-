@@ -1,0 +1,48 @@
+page {
+  background: linear-gradient(135deg, #361a11, #1c0c06);
+}
+
+.person-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 500rpx;
+	// min-height: 100vh;
+	/* 关键：背景透明！ */
+	background: transparent; 
+	color: #e0e0ff;
+	.user-name{
+		font-size: 40rpx;
+		margin: 50rpx;
+	}
+	.funtions{
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		// align-content: space-around;
+	}
+	
+}
+.info-card{
+  	min-height: 800rpx;
+  	background-color: white;
+	border-radius: 15rpx 15rpx 0rpx 0rpx;
+	.tabs{
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
+	.status{
+		width: 100%;
+		display: flex;
+		justify-content: start;
+		span{
+			margin: 20rpx;
+			color: #bcbdc3;
+		}
+		.active{
+			color:#181a2b;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+.item{
+	display: flex;
+	justify-content: center;
+	height: 70rpx;
+	padding: 5rpx 10rpx;
+	background-color: #311f1c;
+	border-radius: 10rpx;
+	margin: 10rpx;
+	font-size: 30rpx;
+	align-items: center;
+	color: #b4aeab;
+	.item{
+		margin: 0rpx;
+	}
+}

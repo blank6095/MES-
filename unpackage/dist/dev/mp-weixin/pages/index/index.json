@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "首页",
-  "usingComponents": {
-    "u-search": "../../uni_modules/uview-plus/components/u-search/u-search"
-  }
-}
