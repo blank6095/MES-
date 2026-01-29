@@ -33,6 +33,12 @@
 			"style": {
 				"navigationBarTitleText": "组件"
 			}
+		},
+		{
+			"path": "pages/dome/uploadImage/uploadImage",
+			"style": {
+				"navigationBarTitleText": "上传图片"
+			}
 		}
 	],
 	"globalStyle": {

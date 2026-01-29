@@ -16,12 +16,10 @@
 		    <up-tabs :list="list" ></up-tabs>
 		</view>
 		<view class="status">
-			<span :class="{active: index===0}" @click="choose(0)">近期</span>
-			<span :class="{active: index===1}" @click="choose(1)">创建</span>
+			<span :class="{active:index===0}" @click="choose(0)">近期</span>
+			<span :class="{active:index===1}" @click="choose(1)">创建</span>
 		</view>
-		<view class="card-boxs">
-			<cardBox title="我喜欢的音乐" :data="[103,288]"></cardBox>
-		</view>
+		<cardBox title="我的喜欢" :data="[103,288]"></cardBox>
 	</view>
 </template>
 <script setup>

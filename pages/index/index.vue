@@ -43,6 +43,7 @@
 	const fileList = ref([
 		{name: "watch",url: urls[uni.$u.random(0, urls.length - 1)]},
 		{name: "dome1",url: urls[uni.$u.random(0, urls.length - 1)]},
+		{name: "uploadImage",url: urls[uni.$u.random(0, urls.length - 1)]},
 		]);
 	onLoad(() => {
 
