@@ -25,7 +25,7 @@
 			"path": "pages/dome/dome1/dome1",
 			"style": {
 				"navigationBarTitleText": "案例1"
-		
+
 			}
 		},
 		{
@@ -38,6 +38,12 @@
 			"path": "pages/dome/uploadImage/uploadImage",
 			"style": {
 				"navigationBarTitleText": "上传图片"
+			}
+		},
+		{
+			"path": "pages/dome/props/props",
+			"style": {
+				"navigationBarTitleText": ""
 			}
 		}
 	],
