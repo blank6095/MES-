@@ -1,7 +1,7 @@
 <template>
 	<view class="person-card">
 		<u-avatar size="150rpx"></u-avatar>
-		<view class="user-name">
+		<view class="user-name" @click="login">
 			{{getUserName}}
 		</view>
 		<view class="funtions">
@@ -24,9 +24,12 @@
 </template>
 <script setup>
 import { computed, ref } from 'vue';
+import {store} from '/common/store/index.js'
+// import { store } from '../../common/store';
 const userInfo=ref();
 const spanStyle=ref();
 const index=ref(0)
+const userStore = store()
 const choose=(e)=>{
 	index.value=e
 }
@@ -38,6 +41,12 @@ const list=[
 	{name:"笔记"},
 	{name:"分享"},	
 ]
+const login=()=>{
+	userStore.value="123"
+	uni.showToast({
+		title:userStore.name
+	})
+}
 </script>
 <style lang="scss" scoped>
 @import 'my.scss'

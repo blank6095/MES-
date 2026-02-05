@@ -1,26 +1,20 @@
 import App from './App'
 import uviewPlus from '@/uni_modules/uview-plus'
-// #ifndef VUE3
-import Vue from 'vue'
-import './uni.promisify.adaptor'
-Vue.config.productionTip = false
-App.mpType = 'app'
-const app = new Vue({
-	...App
-})
-app.$mount()
-// #endif
+import { createPinia } from 'pinia' // 👈 新增导入
 
 // #ifdef VUE3
-import {
-	createSSRApp
-} from 'vue'
-export function createApp() {
-	const app = createSSRApp(App)
-	app.use(uviewPlus)
-	return {
-		app
-	}
-}
+import { createSSRApp } from 'vue'
 
+export function createApp() {
+  const app = createSSRApp(App)
+  const pinia = createPinia() // 👈 创建实例
+  
+  app.use(uviewPlus)
+  app.use(pinia) // 👈 挂载 Pinia
+  
+  return {
+    app,
+    pinia // 👈 必须返回（UniApp 要求）
+  }
+}
 // #endif

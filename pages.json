@@ -10,7 +10,8 @@
 			"path": "pages/my/my",
 			"style": {
 				"navigationBarTitleText": "我的",
-				"navigationBarBackgroundColor": "#361a11"
+				"navigationBarBackgroundColor": "#361a11",
+				"navigationStyle": "custom"
 			}
 		},
 
