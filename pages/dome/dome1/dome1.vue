@@ -1,7 +1,7 @@
 <template>
 	<view class="card-container">
 		<!-- 卡片容器 -->
-		
+
 		<view class="store-card">
 			<view class="border1"></view>
 			<view class="border2"></view>
@@ -29,14 +29,105 @@
 					<text class="phone-number">13202369854</text>
 				</button>
 			</view>
-			
 		</view>
-		
+	</view>
+	<view class="store-address">
+		<view class="address">
+			<view class="icon">
+				<u-icon name="map-fill"></u-icon>
+			</view>
+			<view class="detaill">
+				<view class="title">
+					店铺地址
+				</view>
+				<view class="ad">
+					中国重庆市南岸市
+				</view>
+			</view>
+		</view>
+		<view class="container">
+			<!-- 轮播图容器 -->
+			<swiper class="banner-swiper" :indicator-dots="true" :autoplay="true" circular>
+				<swiper-item v-for="(item, index) in banners" :key="index" class="banner-item">
+					<image :src="item" class="banner-image" mode="aspectFill" />
+				</swiper-item>
+			</swiper>
+		</view>
+		<button class="btn">一键导航</button>
+		<view class="business-hours">
+			<view class="left">
+				<view class="icon">
+					<u-icon name="clock-fill"></u-icon>
+				</view>
+				<view class="time">
+					<view class="title">营业时间</view>
+					<text>00:00 - 23:59</text>
+				</view>
+			</view>
+			<button class="right">
+				<u-icon name="checkmark-circle-fill"></u-icon>
+				营业中
+			</button>
+		</view>
+	</view>
+	<view class="store-service">
+		<view class="title">
+			快捷服务
+		</view>
+		<view class="service-grid">
+			<view class="service-item" v-for="(item,index) in storeService">
+				<view class="service-icon">
+					<u-icon :name="item.icon" :color="item.color" size="20"></u-icon>
+				</view>
+				<view class="service-name">
+					{{item.name}}
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
 <script>
 	export default {
+		data() {
+			return {
+				banners: [
+					"/static/wxv74p852humsjiat3y9d0cqzbgrln6o_PIC2018.png",
+					"/static/wxv74p852humsjiat3y9d0cqzbgrln6o_PIC2018.png"
+				],
+				storeService: [{
+						name: "电话",
+						icon: "phone-fill",
+						color: "#2563eb"
+					},
+					{
+						name: "导航",
+						icon: "map-fill",
+						color: "#16a34a"
+					},
+					{
+						name: "优惠券",
+						icon: "tags-fill",
+						color: "#dc2626"
+					},
+					{
+						name: "会员",
+						icon: "integral-fill",
+						color: "#9333ea"
+					},
+					{
+						name: "提建议",
+						icon: "chat-fill",
+						color: "#4f46e5"
+					},
+					{
+						name: "会员",
+						icon: "integral-fill",
+						color: "#2563eb"
+					},
+				]
+			}
+		},
 		methods: {
 			call() {
 				uni.makePhoneCall({
@@ -48,108 +139,5 @@
 </script>
 
 <style lang="scss">
-	.border1{
-		position: absolute;
-		width: 170rpx;
-		height: 170rpx;
-		border-radius:50% ;
-		background-color: white;
-		margin: 0rpx 0rpx 260rpx 600rpx;
-	}
-	.border2{
-		position: absolute;
-		width: 150rpx;
-		height: 150rpx;
-		border-radius:50% ;
-		background-color: white;
-		margin: 250rpx 300rpx 0rpx 0rpx;
-	}
-	.card-container {
-		position: relative;
-		background-color: #f5f5f5;
-	}
-	.store-card {
-		display: flex;
-		align-items: center;
-		background-image: linear-gradient(135deg, #00a868, #00c77d);
-		padding: 30rpx;
-		box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
-		color: white;
-		overflow: hidden;
-	}
-
-	.logo {
-		background-color: transparent;
-		image {
-			width: 150rpx;
-			height: 150rpx;
-			border-radius: 20rpx;
-		}
-		margin-right: 30rpx;
-		margin-bottom: 40rpx;
-	}
-
-	.content {
-		flex: 1;
-		overflow: hidden;
-	}
-
-	.title {
-		font-size: 32rpx;
-		font-weight: bold;
-		margin-bottom: 10rpx;
-	}
-
-	.rating {
-		display: flex;
-		align-items: center;
-		margin: 10rpx 0rpx;
-	}
-
-	.stars {
-		font-size: 28rpx;
-		margin-right: 10rpx;
-	}
-
-	.score {
-		font-size: 28rpx;
-		font-weight: bold;
-		margin-right: 10rpx;
-	}
-
-	.max {
-		font-size: 24rpx;
-		opacity: 0.8;
-	}
-
-	.tags {
-		margin-bottom: 20rpx;
-	}
-
-	.tag {
-		font-size: 24rpx;
-		opacity: 0.9;
-	}
-
-	.call-btn {
-		background-color: white;
-		border: none;
-		border-radius: 20rpx;
-		padding: 10rpx 10rpx;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 28rpx;
-		phone-number{
-			color: rgba(255, 255, 255, 0.2);
-		}
-		width: 50%;
-		height:	70rpx;
-		margin-left: 240rpx;
-		margin-right: 0rpx;
-	}
-
-	.phone-icon {
-		margin-right: 10rpx;
-	}
+	@import 'dome1.scss'
 </style>
