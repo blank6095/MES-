@@ -1,0 +1,76 @@
+.content{
+	padding: 0 30rpx;
+}
+.addImage{
+	width: 180rpx;
+	height: 180rpx;
+	border: 1rpx solid #949494;
+	color: #949494;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	// background-color: #b4b4b4;
+	border-radius: 20rpx;
+	margin-top: 10rpx;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+.url{
+	width: 100%;
+	height: 13vh;
+	border-radius: 20rpx;
+	// background-color: #cecece;
+	margin-bottom: 20rpx;
+	margin-top: 20rpx;
+	padding: 30rpx;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+.copy{
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+	// background-color: #b4b4b4;
+	
+	width: 100%;
+	height: 50rpx;
+	.copy-box{
+		width: 60%;
+		margin: 0 10rpx;
+		border-radius: 30rpx;
+	}
+	.copy-btn{
+		width: 70rpx;
+		height: 70rpx;
+		// background-color: #b4b4b4;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.img-list{
+	width: 100%;
+	min-height: 800rpx; 
+	border-radius: 20rpx;
+	padding: 30rpx;
+	box-sizing: border-box;
+	// background-color: #cecece;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	gap: 15rpx;
+	.image-item{
+		width: 200rpx;
+		height: 200rpx;
+		// border: 1rpx solid #777;
+		image{
+			width: 100%;
+			height: 100%;
+			border-radius: 20rpx;
+		}
+	}
+}

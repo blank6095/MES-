@@ -1,17 +1,33 @@
 <template>
-	<view>
-		<u-image :src="image" @click="uploadImage()"></u-image>
-	</view>
-	<view class="">
-		url:
-		<text>{{image}}</text>
+	<view class="content">
+		<view class="url">
+			<view class="title">图片地址</view>
+			<u-copy :content="url" class="copy">
+				<view class="copy-box">{{imageUrl}}</view>
+				<view class="copy-btn" @click="copyUrl">
+					<u-icon name="/static/复制.png" size="20"></u-icon>
+				</view>
+			</u-copy>
+		</view>
+		<view class="img-list">
+			<view class="image-item" v-for="(item,index) in images">
+				<image src="/static/wxv74p852humsjiat3y9d0cqzbgrln6o_PIC2018.png" mode="aspectFill"></image>
+			</view>
+			<view class="addImage"  @click="uploadImage()">
+				<u-icon name="plus" size="50" color="#949494"></u-icon>
+				<text>添加图片</text>
+			</view>
+		</view>
 	</view>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+	import {
+		computed,
+		ref
+	} from 'vue';
 
-	const image=ref()
+	const images = ref([])
 	const uploadImageFile = (tempFilePath) => {
 		uni.showLoading({
 			title: '上传中'
@@ -27,7 +43,7 @@ import { ref } from 'vue';
 			success: (res) => {
 				const data = JSON.parse(res.data)
 				console.log(data.data.src);
-				image.value = data.data.src;
+				images.value.push(data.data.src);
 				uni.hideLoading();
 				this.$u.toast('上传成功');
 			},
@@ -52,9 +68,12 @@ import { ref } from 'vue';
 			}
 		});
 	}
-	
+	const url = "https://slapi.xdjplus.com/Api/Common/UploadImages"
+	const imageUrl = computed(() => {
+		return `${url.substring(0, 12)}...${url.substring(url.length - 12)}`
+	})
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+	@import 'uploadImage.scss'
 </style>

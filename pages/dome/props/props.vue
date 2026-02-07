@@ -1,14 +1,5 @@
 <template>
-	<button @click="popup">弹出</button>
-	<u-popup :show="showPopup" :round="10" mode="center" @close="close" @open="open" class="popup-container">
-		<view class="popup-content">
-			<view class="title">
-				<text>指定会员</text>
-			</view>
-			<u-input placeholder="请输入会员名称" class=""></u-input>
-			<button @click="showPopup=false">确认</button>
-		</view>
-	</u-popup>
+	<button @click="test">点击</button>
 </template>
 <script setup>
 	import {
