@@ -3,15 +3,15 @@
 		<view class="url">
 			<view class="title">图片地址</view>
 			<u-copy :content="url" class="copy">
-				<view class="copy-box">{{imageUrl}}</view>
+				<view class="copy-box">{{format(url)}}</view>
 				<view class="copy-btn" @click="copyUrl">
 					<u-icon name="/static/复制.png" size="20"></u-icon>
 				</view>
 			</u-copy>
 		</view>
 		<view class="img-list">
-			<view class="image-item" v-for="(item,index) in images">
-				<image src="/static/wxv74p852humsjiat3y9d0cqzbgrln6o_PIC2018.png" mode="aspectFill"></image>
+			<view class="image-item" v-for="(item,index) in images" @click="showUrl(item,index)" :class="{active:num===index}">
+				<image :src="item" mode="aspectFill"></image>
 			</view>
 			<view class="addImage"  @click="uploadImage()">
 				<u-icon name="plus" size="50" color="#949494"></u-icon>
@@ -22,12 +22,15 @@
 </template>
 
 <script setup>
-	import {
-		computed,
-		ref
-	} from 'vue';
-
+	import {computed,ref} from 'vue';
 	const images = ref([])
+	const url = ref("")
+	const num=ref(-1)
+	const showUrl=(e,index)=>{
+		url.value=e
+		num.value=index
+		// console.log(num.value);
+	}
 	const uploadImageFile = (tempFilePath) => {
 		uni.showLoading({
 			title: '上传中'
@@ -44,16 +47,17 @@
 				const data = JSON.parse(res.data)
 				console.log(data.data.src);
 				images.value.push(data.data.src);
-				uni.hideLoading();
-				this.$u.toast('上传成功');
+				console.log("上传图片",images.value);
+				uni.hideLoading();	
 			},
 			fail: (err) => {
 				console.error('上传失败:', err);
-				this.$u.toast('网络错误');
+				
 			}
 		});
 		return
 	}
+	//从本地选择图片
 	const uploadImage = () => {
 		uni.chooseImage({
 			count: 1, // 只允许选择1张图片
@@ -63,15 +67,14 @@
 				uploadImageFile(res.tempFilePaths[0])
 			},
 			fail: (err) => {
-				console.error('选择图片失败:', err);
-				this.$u.toast('选择图片失败');
+				console.error('选择图片失败:', err);	
 			}
 		});
 	}
-	const url = "https://slapi.xdjplus.com/Api/Common/UploadImages"
-	const imageUrl = computed(() => {
+	const format =(url)=>{
+		if(url)
 		return `${url.substring(0, 12)}...${url.substring(url.length - 12)}`
-	})
+	}
 </script>
 
 <style lang="scss" scoped>

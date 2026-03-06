@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "goeasy": "^2.13.24",
+    "lodash-es": "^4.17.23",
     "pinia": "^3.0.4"
   }
 }

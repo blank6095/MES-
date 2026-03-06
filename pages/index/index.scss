@@ -1,3 +1,165 @@
-.addFile{
+/* 全局样式 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* 内容区域 */
+.content {
+	padding: 16px;
+	background-color: #f5f7fa;
+	min-height: 100vh;
+	padding-bottom: 80px; /* 为底部 tabBar 留出空间 */
+}
+
+/* 区块标题 */
+.section-title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 12px;
+	color: #333;
+}
+
+/* 添加文件区域 */
+.add-file-container {
+	background: white;
+	padding: 16px;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	margin-bottom: 20px;
+}
+
+.add-file-form {
 	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+/* 按钮样式 */
+.up-button {
+	min-height: 44px !important;
+	font-size: 16px !important;
+}
+
+/* 输入框样式 */
+.up-input {
+	min-height: 44px !important;
+	font-size: 16px !important;
+}
+
+/* 文件列表区域 */
+.file-list-container {
+	background: white;
+	padding: 16px;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 文件列表 */
+.file-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+	gap: 16px;
+}
+
+/* 文件卡片 */
+.file-card {
+	background: #f8f9fa;
+	border-radius: 10px;
+	padding: 16px;
+	text-align: center;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border: 1px solid #e9ecef;
+	min-height: 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.file-card:active {
+	transform: scale(0.98);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	border-color: #667eea;
+}
+
+.file-name {
+	font-size: 14px;
+	color: #333;
+	margin-top: 10px;
+	word-break: break-all;
+	text-align: center;
+	line-height: 1.4;
+}
+
+/* 空状态 */
+.empty-state {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 20px;
+	text-align: center;
+}
+
+.empty-text {
+	font-size: 16px;
+	color: #666;
+	margin-top: 20px;
+	font-weight: 500;
+}
+
+.empty-subtext {
+	font-size: 14px;
+	color: #999;
+	margin-top: 10px;
+	line-height: 1.5;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+	.content {
+		padding: 12px;
+		padding-bottom: 70px;
+	}
+	
+	.add-file-container {
+		padding: 14px;
+		margin-bottom: 16px;
+	}
+	
+	.file-list-container {
+		padding: 14px;
+	}
+	
+	.file-list {
+		grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+		gap: 12px;
+	}
+	
+	.file-card {
+		padding: 14px;
+		min-height: 100px;
+	}
+	
+	.section-title {
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+	
+	.empty-state {
+		padding: 50px 16px;
+	}
+	
+	.empty-text {
+		font-size: 15px;
+		margin-top: 16px;
+	}
+	
+	.empty-subtext {
+		font-size: 13px;
+		margin-top: 8px;
+	}
 }
